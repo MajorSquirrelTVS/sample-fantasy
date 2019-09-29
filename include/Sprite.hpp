@@ -13,10 +13,11 @@ public:
     Sprite(unsigned int index);
     void attachTexture(const sf::Texture& texture);
 
-    const sf::Sprite& getSprite() const;
+    sf::Sprite& getSprite();
+    unsigned int getIndex();
 private:
-    unsigned int index;
-    sf::Sprite sprite;
+    unsigned int m_index;
+    sf::Sprite m_sprite;
 };
 
 

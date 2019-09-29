@@ -17,7 +17,7 @@ public:
 
     ~TileMap() = default;
 private:
-    Sprite map[24][48];
+    std::vector<Sprite> m_map;
 };
 
 

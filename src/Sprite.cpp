@@ -4,17 +4,21 @@
 
 #include <Sprite.hpp>
 
-Sprite::Sprite(unsigned int index) : index(index) {}
+Sprite::Sprite(unsigned int index) : m_index(index) {}
 
 void Sprite::attachTexture(const sf::Texture &texture) {
     size_t x, y;
 
-    x = this->index % 48 * 16 + this->index * 1;
-    y = this->index % 24 * 16 + this->index * 1;
-    this->sprite.setTexture(texture);
-    this->sprite.setTextureRect(sf::IntRect(x, y, 16, 16));
+    x = m_index % 48 * 16 + m_index * 1;
+    y = m_index % 24 * 16 + m_index * 1;
+    m_sprite.setTexture(texture);
+    m_sprite.setTextureRect(sf::IntRect(x, y, 16, 16));
 }
 
-const sf::Sprite& Sprite::getSprite() const {
-    return this->sprite;
+sf::Sprite& Sprite::getSprite() {
+    return m_sprite;
+}
+
+unsigned int Sprite::getIndex() {
+    return m_index;
 }
