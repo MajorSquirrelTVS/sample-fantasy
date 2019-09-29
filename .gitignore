@@ -32,4 +32,5 @@
 *.app
 
 # JetBrains
-*.idea/
+.idea/
+cmake-build-*/
